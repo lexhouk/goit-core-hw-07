@@ -65,11 +65,11 @@ class Record:
     def __find(self,
                phone: str,
                get_instance: bool = False
-               ) -> int | Phone:
+               ) -> int | Phone | None:
         for id, instance in enumerate(self.phones):
             if instance.value == phone:
                 return instance if get_instance else id
-        raise None
+        return None
 
     def add_phone(self, phone: str) -> None:
         self.phones.append(Phone(phone))
